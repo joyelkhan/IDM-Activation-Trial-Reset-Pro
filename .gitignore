@@ -1,0 +1,36 @@
+# PowerShell
+*.ps1xml
+*.psd1
+
+# Logs
+*.log
+*.txt
+
+# Backup files
+*_Backup_*/
+IDM_Pro_Backup_*/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Test files
+test/
+tests/
+*.test.ps1
