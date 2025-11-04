@@ -3,7 +3,7 @@
 [![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=for-the-badge&logo=windows)](https://www.microsoft.com/windows)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+%20%7C%207.0+-5391FE?style=for-the-badge&logo=powershell)](https://github.com/PowerShell/PowerShell)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/IDM-Activation-Trial-Reset-Pro?style=for-the-badge)](https://github.com/yourusername/IDM-Activation-Trial-Reset-Pro/issues)
+[![GitHub Issues](https://img.shields.io/github/issues/joyelkhan/IDM-Activation-Trial-Reset-Pro?style=for-the-badge)](https://github.com/joyelkhan/IDM-Activation-Trial-Reset-Pro/issues)
 
 > **Professional-grade PowerShell solution for managing Internet Download Manager licensing with enterprise features**
 
@@ -31,14 +31,14 @@
 ### Method 1: Standard Execution
 ```powershell
 # Download and execute directly
-irm https://raw.githubusercontent.com/yourusername/IDM-Activation-Trial-Reset-Pro/main/IDM_Activation_Pro.ps1 | iex
+irm https://raw.githubusercontent.com/joyelkhan/IDM-Activation-Trial-Reset-Pro/main/IDM_Activation_Pro.ps1 | iex
 ```
 
 ### Method 2: Manual Download
 
 ```powershell
 # Clone repository
-git clone https://github.com/yourusername/IDM-Activation-Trial-Reset-Pro.git
+git clone https://github.com/joyelkhan/IDM-Activation-Trial-Reset-Pro.git
 cd IDM-Activation-Trial-Reset-Pro
 
 # Execute main script
@@ -136,16 +136,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🐛 Reporting Issues
 
-Found a bug? Please [open an issue](https://github.com/yourusername/IDM-Activation-Trial-Reset-Pro/issues/new?template=bug_report.md) with:
+Found a bug? Please [open an issue](https://github.com/joyelkhan/IDM-Activation-Trial-Reset-Pro/issues/new?template=bug_report.md) with:
 
 - Detailed description
 - Steps to reproduce
 - System information
 - Error logs
-
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/IDM-Activation-Trial-Reset-Pro&type=Date)](https://star-history.com/#yourusername/IDM-Activation-Trial-Reset-Pro&Date)
 
 ---
 

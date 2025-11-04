@@ -55,7 +55,7 @@
     MIT License
     
 .LINK
-    https://github.com/yourusername/IDM-Activation-Trial-Reset-Pro
+    https://github.com/joyelkhan/IDM-Activation-Trial-Reset-Pro
 #>
 
 [CmdletBinding()]
