@@ -5,6 +5,8 @@
 # Logs
 *.log
 *.txt
+!assets/*.txt
+!assets/**/*.txt
 
 # Backup files
 *_Backup_*/

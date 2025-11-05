@@ -46,7 +46,10 @@
     Aggressive cleaning mode
     
 .VERSION
-    2.1.0
+    2.2.0
+    
+.AUTHOR
+    MD. Abu Naser Khan
     
 .AUTHOR
     GitHub Community
@@ -95,7 +98,8 @@ param(
 # =============================================
 
 $ErrorActionPreference = "Stop"
-$Script:ScriptVersion = "2.1.0"
+$Script:ScriptVersion = "2.2.0"
+$Script:Author = "MD. Abu Naser Khan"
 $Script:ExecutionTimestamp = [DateTime]::Now.ToString("yyyyMMdd_HHmmss")
 $Script:BackupPath = "$env:TEMP\IDM_Pro_Backup_$ExecutionTimestamp"
 $Script:LogPath = "$env:TEMP\IDM_Pro_Log_$ExecutionTimestamp.txt"
@@ -173,6 +177,35 @@ function Save-LogFile {
     } catch {
         Write-Log "Failed to save log file: $_" -Level "WARNING"
     }
+}
+
+function Invoke-AutoExit {
+    <#
+    .SYNOPSIS
+        Auto-exit function with countdown display
+    .DESCRIPTION
+        Provides clean process termination with visual countdown
+    #>
+    [CmdletBinding()]
+    param(
+        [int]$DelaySeconds = 3,
+        [string]$Message = "Process completed successfully"
+    )
+    
+    Write-Host "`n$Message" -ForegroundColor Green
+    Write-Host "Application will close automatically in $DelaySeconds seconds..." -ForegroundColor Yellow
+    Write-Host ""
+    
+    # Countdown display
+    for ($i = $DelaySeconds; $i -gt 0; $i--) {
+        Write-Host "  Closing in $i..." -NoNewline -ForegroundColor Cyan
+        Start-Sleep -Seconds 1
+        Write-Host "`r" -NoNewline
+    }
+    
+    Write-Host "  Exiting application...                    " -ForegroundColor Green
+    Start-Sleep -Milliseconds 500
+    exit 0
 }
 
 # =============================================
@@ -701,7 +734,7 @@ function Invoke-MainExecution {
     # Final message
     if (-not $Silent) {
         Write-Host "`n" + ("="*80) -ForegroundColor Magenta
-        Write-Host "EXECUTION COMPLETED SUCCESSFULLY" -ForegroundColor Green
+        Write-Host "🎉 EXECUTION COMPLETED SUCCESSFULLY" -ForegroundColor Green
         Write-Host ("="*80) -ForegroundColor Magenta
         Write-Host "`nPlease restart IDM to apply changes." -ForegroundColor Cyan
         
@@ -709,6 +742,13 @@ function Invoke-MainExecution {
             Write-Host "`nBackup location: $Script:BackupPath" -ForegroundColor Yellow
             Write-Host "Log file: $Script:LogPath" -ForegroundColor Yellow
         }
+        
+        Write-Host ""
+        Write-Host "Developed by: $Script:Author" -ForegroundColor Magenta
+        Write-Host "Version: $Script:Version" -ForegroundColor Cyan
+        
+        # Auto-exit countdown
+        Invoke-AutoExit -DelaySeconds 5 -Message "All operations completed successfully"
     }
 }
 
